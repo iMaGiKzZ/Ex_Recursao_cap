@@ -1,0 +1,44 @@
+//ACHAR O MENOR ELEMENTO 
+#include<stdio.h>
+int min(int a,int b)
+{
+ if(a>b)
+ return b;
+ return a;
+}
+int FindMin(int arr[],int n)
+{
+ if(n==0)
+ return arr[0];
+ return min(FindMin(arr,n-1),arr[n]);
+}
+int main()
+{
+ int arr[6]={30,20,9,4,10,6};
+ /* FindMin(arr,size of array -1) */
+ int Min_value=FindMin(arr,5);
+ printf("%d ",Min_value);
+ return 0;
+}
+
+//SOMA USANDO RECURSAO
+#include<stdio.h>
+
+int soma(int a,int b)
+{
+ return a+b;
+}
+
+int soma2(int arr[],int n)
+{
+ if(n==0)
+ return arr[0];
+ return soma(soma2(arr,n-1),arr[n]);
+}
+
+int main()
+{
+ int vet[3]={-1,3,2};
+ printf("%d ",soma2(vet,2));
+ return 0;
+}
